@@ -17,6 +17,14 @@ namespace EventExpress
             Pages = new GUIMap(driver);
         }
 
+        public void LoginAsAdmin()
+        {
+            Pages.LandingPage.GoToPage("https://eventsexpress-test.azurewebsites.net/");
+            Pages.LandingPage.ClickSignIn();
+            Pages.ModalPage.Login("admin@gmail.com", "1qaz1qaz");
+            Pages.LandingPage.ClickFindEvent();
+        }
+
         [TearDown]
         public void TearDown()
         {

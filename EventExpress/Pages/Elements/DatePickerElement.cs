@@ -3,10 +3,6 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventExpress.Pages.Elements
 {
@@ -16,14 +12,10 @@ namespace EventExpress.Pages.Elements
         {
             var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(Selector));
-            SendKeys(year);
-            SendKeys(year);
-            SendKeys(year);
-            SendKeys(Keys.ArrowLeft);
-            SendKeys(month);
-            SendKeys(Keys.ArrowLeft);
-            SendKeys(Keys.ArrowLeft);
+            SendKeys(Keys.LeftControl + "a");
             SendKeys(day);
+            SendKeys(month);
+            SendKeys(year);
         }
     }
 }
