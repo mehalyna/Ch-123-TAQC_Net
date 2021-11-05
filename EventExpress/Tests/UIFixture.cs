@@ -1,4 +1,5 @@
 ﻿using EventExpress.Pages.Common;
+using EventExpress.Tests;
 using NUnit.Framework;
 using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
@@ -17,12 +18,13 @@ namespace EventExpress
             Pages = new GUIMap(driver);
         }
 
-        public void LoginAsAdmin()
+        public void LoginAsAdmin(string text)
         {
-            Pages.LandingPage.GoToPage("https://eventsexpress-test.azurewebsites.net/");
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
             Pages.LandingPage.ClickSignIn();
-            Pages.ModalPage.Login("admin@gmail.com", "1qaz1qaz");
+            Pages.ModalPage.Login(UserData.EmailAdmin, UserData.PasswordAdmin);
             Pages.LandingPage.ClickFindEvent();
+            Pages.NavigationPage.ClickNavPageTitle(text);
         }
 
         [TearDown]

@@ -13,8 +13,8 @@ namespace EventExpress.Pages.Elements
             var wait = new WebDriverWait(Driver, TimeSpan.FromSeconds(10));
             wait.Until(ExpectedConditions.ElementToBeClickable(Selector));
             SendKeys(Keys.LeftControl + "a");
-            SendKeys(day);
             SendKeys(month);
+            SendKeys(day);
             SendKeys(year);
         }
     }

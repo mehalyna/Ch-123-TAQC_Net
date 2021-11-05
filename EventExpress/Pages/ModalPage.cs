@@ -1,7 +1,5 @@
 ﻿using EventExpress.Pages.Common;
 using EventExpress.Pages.Elements;
-using OpenQA.Selenium;
-using System.Collections.Generic;
 
 
 namespace EventExpress.Pages
@@ -17,6 +15,7 @@ namespace EventExpress.Pages
             public static readonly string FormPageLoginText = "Login";
             public static readonly string FormPageRegisterText = "Register";
         }
+
         #region Selectors
         private const string modalDialogXPath = "//div[@class='MuiDialog-root'][2]";
         private string formPageXPath(string text) => $"{modalDialogXPath}//span[@class='MuiTab-wrapper'][text()='{text}']";
@@ -54,7 +53,7 @@ namespace EventExpress.Pages
             inpFormEmail.SendData(email);
             inpFormPassword.SendData(password);
             inpFormRegisterPasswordRepeat.SendData(password);
-            //btnSignInUpClear(formPageBtnSignUpText).Click();
+            btnSignInUpClear(ModalElementsText.FormPageBtnSignUpText).Click();
         }
     }
 }
