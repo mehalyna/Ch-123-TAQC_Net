@@ -1,16 +1,11 @@
 ﻿using EventExpress.Pages.Common;
 using OpenQA.Selenium;
 using SeleniumExtras.WaitHelpers;
-using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EventExpress.Pages.Elements
 {
-    class TableElement: WebComponent
+    class TableElement : WebComponent
     {
         public int FindElementInRow(string searchName)
         {

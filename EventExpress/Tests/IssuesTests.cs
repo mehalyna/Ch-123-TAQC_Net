@@ -4,7 +4,7 @@ using static EventExpress.Pages.NavigationPage;
 
 namespace EventExpress.Tests
 {
-    class IssuesTests: UIFixture
+    class IssuesTests : UIFixture
     {
         public static class IssueTestData
         {
@@ -13,15 +13,23 @@ namespace EventExpress.Tests
             public static readonly string yearFrom = "2021";
             public static readonly string dayTo = "15";
             public static readonly string monthTo = "09";
-            public static readonly string yearTo= "2022";
+            public static readonly string yearTo = "2022";
+        }
+
+        [SetUp]
+        public void SetupIssuePage()
+        {
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
+            Pages.LandingPage.ClickSignIn();
+            Pages.ModalPage.Login(UserData.EmailAdmin, UserData.PasswordAdmin);
+            Pages.LandingPage.ClickFindEvent();
+            Pages.NavigationPage.ClickNavPageTitle(NavigationElementsText.IssuesAdminNavPageText);
         }
 
         [Test]
         public void TestDatePickerOnIssuePage()
         {
-            LoginAsAdmin(NavigationElementsText.IssuesAdminNavPageText);
-            Pages.IssuesPage.SendDataToDatapickerFrom(IssueTestData.dayFrom, IssueTestData.monthFrom, IssueTestData.yearFrom);
-            Pages.IssuesPage.SendDataToDatapickerTo(IssueTestData.dayTo, IssueTestData.monthTo, IssueTestData.yearTo);
+            EnterDateToDatePicker();
             Pages.IssuesPage.ClickResetSearchBtn(IssuesElementsText.SearchBtnText);
             Assert.AreEqual(2, Pages.IssuesPage.GetFieldIssueResults(), "Amount of issue results doesn`t same as expected");
         }
@@ -29,7 +37,6 @@ namespace EventExpress.Tests
         [Test]
         public void TestCheckboxOnIssuePage()
         {
-            LoginAsAdmin(NavigationElementsText.IssuesAdminNavPageText);
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckOpenText);
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckOpenText);
             Pages.IssuesPage.ClickResetSearchBtn(IssuesElementsText.SearchBtnText);
@@ -39,9 +46,7 @@ namespace EventExpress.Tests
         [Test]
         public void TestIssueResetBtn()
         {
-            LoginAsAdmin(NavigationElementsText.IssuesAdminNavPageText);
-            Pages.IssuesPage.SendDataToDatapickerFrom(IssueTestData.dayFrom, IssueTestData.monthFrom, IssueTestData.yearFrom);
-            Pages.IssuesPage.SendDataToDatapickerTo(IssueTestData.dayTo, IssueTestData.monthTo, IssueTestData.yearTo);
+            EnterDateToDatePicker();
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckOpenText);
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckResolveText);
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckInProgressText);
@@ -49,5 +54,13 @@ namespace EventExpress.Tests
             Pages.IssuesPage.ClickResetSearchBtn(IssuesElementsText.ResetBtnText);
             Assert.IsEmpty(Pages.IssuesPage.GetTextDatepickerTo(), "Input is not empty");
         }
+
+        #region TestSteps
+        private void EnterDateToDatePicker()
+        {
+            Pages.IssuesPage.SendDataToDatapickerFrom(IssueTestData.dayFrom, IssueTestData.monthFrom, IssueTestData.yearFrom);
+            Pages.IssuesPage.SendDataToDatapickerTo(IssueTestData.dayTo, IssueTestData.monthTo, IssueTestData.yearTo);
+        }
+        #endregion
     }
 }

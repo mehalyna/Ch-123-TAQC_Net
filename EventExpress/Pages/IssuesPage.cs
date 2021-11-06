@@ -1,7 +1,6 @@
 ﻿using EventExpress.Pages.Common;
 using EventExpress.Pages.Elements;
 using OpenQA.Selenium;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 
 namespace EventExpress.Pages

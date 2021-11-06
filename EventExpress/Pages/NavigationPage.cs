@@ -1,6 +1,5 @@
 ﻿using EventExpress.Pages.Common;
 using EventExpress.Pages.Elements;
-using OpenQA.Selenium;
 
 namespace EventExpress.Pages
 {

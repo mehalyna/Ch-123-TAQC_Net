@@ -11,9 +11,9 @@ namespace EventExpress.Tests
         public void TestLogin()
         {
             string expetedResult = "Log out";
-            Pages.LandingPage.GoToPage("https://eventsexpress-test.azurewebsites.net/");
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
             Pages.LandingPage.ClickSignIn();
-            Pages.ModalPage.Login("admin@gmail.com", "1qaz1qaz");
+            Pages.ModalPage.Login(UserData.EmailAdmin, UserData.PasswordAdmin);
             Assert.AreEqual(expetedResult, Pages.LandingPage.GetSignOutText(), "Username results doesn`t same as expected");
         }
 
@@ -22,9 +22,9 @@ namespace EventExpress.Tests
         public void TestRegistration()
         {
             string expetedResult = "Your register was successfull. Please confirm your email.";
-            Pages.LandingPage.GoToPage("https://eventsexpress-test.azurewebsites.net/");
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
             Pages.LandingPage.ClickSignIn();
-            Pages.ModalPage.Registration("user@gmail.com", "1q2w3e4r5t");
+            Pages.ModalPage.Registration(UserData.EmailAdmin, UserData.PasswordAdmin);
             Assert.AreEqual(expetedResult, Pages.ModalPage.GetSuccessRegisterText(), "Alert message doesn`t same as expected");
         }
     }
