@@ -15,6 +15,7 @@ namespace EventExpress
         {
             driver = new ChromeDriver();
             Pages = new GUIMap(driver);
+            driver.Manage().Window.Maximize();
         }
 
         [TearDown]

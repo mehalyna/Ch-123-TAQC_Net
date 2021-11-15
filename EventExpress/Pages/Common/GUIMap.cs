@@ -8,6 +8,7 @@ namespace EventExpress.Pages.Common
         public ModalPage ModalPage;
         public NavigationPage NavigationPage;
         public IssuesPage IssuesPage;
+        public HomePage HomePage;
 
         public GUIMap(IWebDriver driver)
         {
@@ -15,6 +16,7 @@ namespace EventExpress.Pages.Common
             ModalPage = new ModalPage().InitPage<ModalPage>(driver);
             NavigationPage = new NavigationPage().InitPage<NavigationPage>(driver);
             IssuesPage = new IssuesPage().InitPage<IssuesPage>(driver);
+            HomePage = new HomePage().InitPage<HomePage>(driver);
         }
     }
 }
