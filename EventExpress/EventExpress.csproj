@@ -72,12 +72,14 @@
     <Compile Include="Pages\Common\WebComponent.cs" />
     <Compile Include="Pages\Common\CommonPage.cs" />
     <Compile Include="Pages\Common\GUIMap.cs" />
+    <Compile Include="Pages\ComunaChatPage.cs" />
     <Compile Include="Pages\Elements\DatePickerElement.cs" />
     <Compile Include="Pages\Elements\InputElements.cs" />
     <Compile Include="Pages\Elements\TableElement.cs" />
     <Compile Include="Pages\IssuesPage.cs" />
     <Compile Include="Pages\ModalPage.cs" />
     <Compile Include="Pages\NavigationPage.cs" />
+    <Compile Include="Tests\ComunaChatTests.cs" />
     <Compile Include="Tests\IssuesTests.cs" />
     <Compile Include="Tests\UIFixture.cs" />
     <Compile Include="Pages\LandingPage.cs" />
