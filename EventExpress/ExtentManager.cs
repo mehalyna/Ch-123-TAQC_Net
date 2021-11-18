@@ -12,7 +12,7 @@ namespace EventExpress
         {
             if (extent == null)
             {
-                string reportPath = $"{Helper.GetProjectDirectory()}\\results\\report.html";
+                string reportPath = $"{Helper.GetProjectBinDirectory()}\\results\\report.html";
                 htmlReporter = new ExtentHtmlReporter(reportPath);
                 extent = new ExtentReports();
                 extent.AttachReporter(htmlReporter);
