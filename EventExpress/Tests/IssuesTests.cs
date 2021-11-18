@@ -50,7 +50,7 @@ namespace EventExpress.Tests
             Pages.IssuesPage.ClickCheckbox(IssuesElementsText.CheckOpenText);
             Pages.IssuesPage.ClickResetSearchBtn(IssuesElementsText.SearchBtnText);
             test.Log(Status.Info, "Click Search button");
-            Assert.AreEqual(4, Pages.IssuesPage.GetFieldIssueResults(), "Amount of issue results doesn`t same as expected");
+            Assert.AreEqual(3, Pages.IssuesPage.GetFieldIssueResults(), "Amount of issue results doesn`t same as expected");
         }
 
         [Test]
