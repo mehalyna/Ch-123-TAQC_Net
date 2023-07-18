@@ -36,8 +36,8 @@ namespace EventExpress.Pages.Common
         public string GetDomProperty(string propertyName)
             => baseComponent.GetDomProperty(propertyName);
 
-        public string GetProperty(string propertyName)
-            => baseComponent.GetProperty(propertyName);
+        //public string GetProperty(string propertyName)
+        //    => baseComponent.GetProperty(propertyName);
 
         public ISearchContext GetShadowRoot()
             => baseComponent.GetShadowRoot();

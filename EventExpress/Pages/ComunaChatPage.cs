@@ -3,7 +3,7 @@ using EventExpress.Pages.Elements;
 
 namespace EventExpress.Pages
 {
-    public class ComunaChatPage: CommonPage
+    public class ComunaChatPage : CommonPage
     {
         #region Selectors
         private string comunaUserItemByIndexCSS(int index) => $"div:nth-child({index}) > a > div > div > h5";
@@ -12,7 +12,7 @@ namespace EventExpress.Pages
         private string chatAvatarCSS = ".SmallAvatar";
         private string chatTextAreaCSS = "textarea";
         private string btnSendCSS = "button[type='submit']";
-        private string lastMessageCSS = "div:last-child > div.msg_cotainer_send";
+        private string lastMessageCSS = ".d-flex.justify-content-end.mb-4:last-child";
         #endregion
 
         #region Elements

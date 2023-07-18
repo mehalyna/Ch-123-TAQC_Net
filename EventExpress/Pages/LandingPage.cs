@@ -3,14 +3,15 @@ using EventExpress.Pages.Elements;
 
 namespace EventExpress.Pages
 {
-    public class LandingPage: CommonPage
+    public class LandingPage : CommonPage
     {
         #region CSS Selectors
-        private readonly string btnSignInUpCSS= ".MuiButton-label";
+        private readonly string btnSignInUpCSS = "#headbtn";
         private readonly string btnFindEventCSS = "div.buttons > a";
         private readonly string btnCreateEventCSS = "div.buttons > button";
         private readonly string btnJoinEventexpressCSS = "div.text-center > div.d-inline-block > button";
-        private readonly string btnLogOutCSS = "div.text-right > div";
+        private readonly string btnLogOutCSS = "button.dropdown-item.bgcolorwhite:nth-child(2)";
+        private readonly string btnUserCSS = "#userNameAlign";
         #endregion
 
         #region Elements
@@ -19,6 +20,7 @@ namespace EventExpress.Pages
         private ButtonElement btnCreateEvent => FindElementByCSS<ButtonElement>(btnCreateEventCSS);
         private ButtonElement btnJoinEventexpress => FindElementByCSS<ButtonElement>(btnJoinEventexpressCSS);
         private ButtonElement btnLogOut => FindElementByCSS<ButtonElement>(btnLogOutCSS);
+        private ButtonElement btnUser => FindElementByCSS<ButtonElement>(btnUserCSS);
         #endregion
         public void ClickSignIn() => btnSignInUp.Click();
 
@@ -27,6 +29,7 @@ namespace EventExpress.Pages
         public void ClickCreateEvent() => btnCreateEvent.Click();
 
         public void ClickJoinEventexpress() => btnJoinEventexpress.Click();
+        public void ClickOnUser() => btnUser.Click();
 
         public void ClickLogOut() => btnLogOut.Click();
         public string GetSignOutText() => btnLogOut.Text;

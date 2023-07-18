@@ -8,7 +8,7 @@ namespace EventExpress.Tests
         public static class ComunaChatTestData
         {
             public static readonly int indexUser = 4;
-            public static readonly string nameUser = "Yuriy Gora";
+            public static readonly string nameUser = "Good Man";
             public static readonly string message = "test message";
             public static readonly string notification = "You have";
 

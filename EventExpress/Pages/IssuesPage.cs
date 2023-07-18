@@ -23,11 +23,11 @@ namespace EventExpress.Pages
         private string btnFormXPath(string text) => $"//div/button/span[text()='{text}']";
         private const string datapickerFromCSS = ".form-group:nth-child(1) .MuiInputBase-input.MuiInput-input";
         private const string datapickerToCSS = ".form-group:nth-child(2) .MuiInputBase-input.MuiInput-input";
-        private const string fieldIssueResultsCSS = ".table.w-100.m-auto tr:not(.bg-light)";
+        private const string fieldIssueResultsCSS = ".events-container"; // not working 
         #endregion
         #region Elements
         private ButtonElement btnResetSearch(string text) => FindElementByXPath<ButtonElement>(btnFormXPath(text));
-        private ButtonElement btnView(int index) => FindElementByXPath<ButtonElement>(btnViewCSS(index+1));
+        private ButtonElement btnView(int index) => FindElementByXPath<ButtonElement>(btnViewCSS(index + 1));
         private ButtonElement checkbox(string text) => FindElementByXPath<ButtonElement>(checkXPath(text));
         private DatePickerElement datapickerFrom => FindElementByCSS<DatePickerElement>(datapickerFromCSS);
         private DatePickerElement datapickerTo => FindElementByCSS<DatePickerElement>(datapickerToCSS);
