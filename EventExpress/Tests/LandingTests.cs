@@ -10,10 +10,11 @@ namespace EventExpress.Tests
         [Test]
         public void TestLogin()
         {
-            string expetedResult = "Log out";
+            string expetedResult = "log out";
             Pages.LandingPage.GoToPage(UserData.BaseUrl);
             Pages.LandingPage.ClickSignIn();
             Pages.ModalPage.Login(UserData.EmailAdmin, UserData.PasswordAdmin);
+            Pages.LandingPage.ClickMyProfile();
             Assert.AreEqual(expetedResult, Pages.LandingPage.GetSignOutText(), "Username results doesn`t same as expected");
         }
 
