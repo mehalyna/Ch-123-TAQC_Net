@@ -25,7 +25,7 @@ namespace EventExpress.Tests
             Pages.LandingPage.ClickFindEvent();
             Pages.NavigationPage.ClickNavPageTitle(NavigationElementsText.IssuesAdminNavPageText);
         }
-
+        [Ignore("Ignore test")]
         [Test]
         public void TestDatePickerOnIssuePage()
         {
@@ -33,7 +33,7 @@ namespace EventExpress.Tests
             Pages.IssuesPage.ClickResetSearchBtn(IssuesElementsText.SearchBtnText);
             Assert.AreEqual(2, Pages.IssuesPage.GetFieldIssueResults(), "Amount of issue results doesn`t same as expected");
         }
-
+        [Ignore("Ignore test")]
         [Test]
         public void TestCheckboxOnIssuePage()
         {

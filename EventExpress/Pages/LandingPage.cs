@@ -3,9 +3,10 @@ using EventExpress.Pages.Elements;
 
 namespace EventExpress.Pages
 {
-    public class LandingPage: CommonPage
+    public class LandingPage : CommonPage
     {
         #region CSS Selectors
+
         private readonly string btnSignInUpCSS= "#headbtn";
         private readonly string btnFindEventCSS = "div.buttons > a";
         private readonly string btnCreateEventCSS = "div.buttons > button";
