@@ -43,9 +43,11 @@ namespace EventExpress.Pages
         public void ClickMyProfile() => btnMyProfile.Click();
 
         public void ClickFirstName() => btnFirstName.Click();
-        public void EnterFirstName(string firstName) {  /*fldFirstName.SendKeys(firstName);*/
+        public void EnterFirstName(string firstName) 
+        
+        {  
         fldFirstName.Clear(); 
-    fldFirstName.SendKeys(firstName);
+        fldFirstName.SendKeys(firstName);
         }
 
 
