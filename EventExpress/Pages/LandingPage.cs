@@ -6,11 +6,11 @@ namespace EventExpress.Pages
     public class LandingPage : CommonPage
     {
         #region CSS Selectors
-        private readonly string btnSignInUpCSS = "#headbtn";
+        private readonly string btnSignInUpCSS= "#headbtn";
         private readonly string btnFindEventCSS = "div.buttons > a";
         private readonly string btnCreateEventCSS = "div.buttons > button";
         private readonly string btnJoinEventexpressCSS = "div.text-center > div.d-inline-block > button";
-        private readonly string btnLogOutCSS = "button.dropdown-item.bgcolorwhite:nth-child(2)";
+        private readonly string btnLogOutCSS = ".dropdown-item:nth-child(2)";
         private readonly string btnUserCSS = "#userNameAlign";
         #endregion
 
@@ -29,9 +29,11 @@ namespace EventExpress.Pages
         public void ClickCreateEvent() => btnCreateEvent.Click();
 
         public void ClickJoinEventexpress() => btnJoinEventexpress.Click();
-        public void ClickOnUser() => btnUser.Click();
+        public void ClickOnUserProfile() => btnUser.Click();
 
         public void ClickLogOut() => btnLogOut.Click();
+        
         public string GetSignOutText() => btnLogOut.Text;
+        
     }
 }

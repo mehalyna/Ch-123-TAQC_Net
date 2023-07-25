@@ -1,4 +1,5 @@
-﻿using OpenQA.Selenium;
+﻿using EventExpress.Pages.Elements;
+using OpenQA.Selenium;
 using OpenQA.Selenium.Support.UI;
 using SeleniumExtras.WaitHelpers;
 using System;
@@ -22,6 +23,8 @@ namespace EventExpress.Pages.Common
 
         public T FindElementByXPath<T>(string locator) where T : WebComponent, new()
             => FindElement<T>(By.XPath(locator));
+        public T FindElementById<T>(string locator) where T : WebComponent, new()
+           => FindElement<T>(By.Id(locator));
 
         public T FindElement<T>(By by) where T : WebComponent, new()
         {
@@ -41,5 +44,12 @@ namespace EventExpress.Pages.Common
             Wait.Until(ExpectedConditions.PresenceOfAllElementsLocatedBy(by));
             return Wait.Until(drv => drv.FindElements(by));
         }
+        public void WaitAndClickOnButtonElement(ButtonElement button, string locator)
+        {
+            Wait.Until(ExpectedConditions.ElementIsVisible(By.CssSelector(locator)));
+            button.Click();
+
+        }
+
     }
 }

@@ -9,6 +9,7 @@ namespace EventExpress.Pages.Common
         public NavigationPage NavigationPage;
         public IssuesPage IssuesPage;
         public ComunaChatPage ComunaChatPage;
+        public HomePage HomePage;
 
         public GUIMap(IWebDriver driver)
         {
@@ -17,6 +18,7 @@ namespace EventExpress.Pages.Common
             NavigationPage = new NavigationPage().InitPage<NavigationPage>(driver);
             IssuesPage = new IssuesPage().InitPage<IssuesPage>(driver);
             ComunaChatPage = new ComunaChatPage().InitPage<ComunaChatPage>(driver);
+            HomePage = new HomePage().InitPage<HomePage>(driver);
         }
     }
 }
