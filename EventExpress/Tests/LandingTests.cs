@@ -29,5 +29,31 @@ namespace EventExpress.Tests
             Pages.ModalPage.Registration(UserData.EmailAdmin, UserData.PasswordAdmin);
             Assert.AreEqual(expetedResult, Pages.ModalPage.GetSuccessRegisterText(), "Alert message doesn`t same as expected");
         }
+
+        [Test]
+        public void TestLoginWithIncorrectLogin()
+        {
+            string expectedErrorMessage = "Invalid email address";
+
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
+            Pages.LandingPage.ClickSignIn();
+            Pages.ModalPage.Login("invalid_user", UserData.PasswordAdmin);
+            string actualResult = Pages.LandingPage.FindLoginErrorMessage();
+
+            Assert.AreEqual(expectedErrorMessage, actualResult, "Error message doesn't match the expected message");
+        }
+        [Test]
+        public void TestLoginWithIncorrectPassword()
+        {
+            string expectedErrorMessage = "Incorrect login or password";
+
+            Pages.LandingPage.GoToPage(UserData.BaseUrl);
+            Pages.LandingPage.ClickSignIn();
+            Pages.ModalPage.Login(UserData.EmailAdmin, "wrong_password");
+
+            string actualResult = Pages.LandingPage.FindPassErrorMessage();
+
+            Assert.AreEqual(expectedErrorMessage, actualResult, "Error message doesn't match the expected message");
+        }
     }
 }
