@@ -1,4 +1,5 @@
 ﻿using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 using System.Drawing;
 
 namespace EventExpress.Pages.Common
@@ -23,6 +24,8 @@ namespace EventExpress.Pages.Common
 
         public void Click()
             => baseComponent.Click();
+        public void SelectByIndex(int index) => new SelectElement(this.baseComponent).SelectByIndex(index);
+        //public void SelectByIndex(int index) => new SelectElement(this.baseComponent).SelectByText("Art&Craft");
 
         public string GetAttribute(string attributeName)
             => baseComponent.GetAttribute(attributeName);
