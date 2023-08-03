@@ -55,7 +55,6 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-
     <Reference Include="Newtonsoft.Json">
       <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
@@ -70,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Pages\AdminPage.cs" />
     <Compile Include="Pages\Common\WebComponent.cs" />
     <Compile Include="Pages\Common\CommonPage.cs" />
     <Compile Include="Pages\Common\GUIMap.cs" />
@@ -80,6 +80,7 @@
     <Compile Include="Pages\IssuesPage.cs" />
     <Compile Include="Pages\ModalPage.cs" />
     <Compile Include="Pages\NavigationPage.cs" />
+    <Compile Include="Tests\AdminPageAddCategoryTests.cs" />
     <Compile Include="Tests\ComunaChatTests.cs" />
     <Compile Include="Tests\IssuesTests.cs" />
     <Compile Include="Tests\UIFixture.cs" />

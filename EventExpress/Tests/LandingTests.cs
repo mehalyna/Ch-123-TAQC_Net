@@ -14,7 +14,7 @@ namespace EventExpress.Tests
             Pages.LandingPage.GoToPage(UserData.BaseUrl);
             Pages.LandingPage.ClickSignIn();
             Pages.ModalPage.Login(UserData.EmailAdmin, UserData.PasswordAdmin);
-            Pages.LandingPage.ClickMyProfile();
+            Pages.LandingPage.ClickOnUserProfile();
 
             Assert.AreEqual(expetedResult, Pages.LandingPage.GetSignOutText(), "Username results doesn`t same as expected");
         }
