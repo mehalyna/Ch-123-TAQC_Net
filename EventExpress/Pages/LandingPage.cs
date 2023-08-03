@@ -13,7 +13,7 @@ namespace EventExpress.Pages
         private readonly string btnJoinEventexpressCSS = "div.text-center > div.d-inline-block > button";
         private readonly string btnMyProfileCSS = "#userNameAlign";
         private readonly string btnLogOutCSS = "#bgcolornav button:nth-child(2)";
-        private readonly string _invalidLoginCSS = ".MuiFormHelperText-root.Mui-error.MuiFormHelperText-filled";
+        private readonly string invalidLoginCSS = ".MuiFormHelperText-root.Mui-error.MuiFormHelperText-filled";
         private readonly string _invalidPasswordCSS = ".text-danger";
         #endregion
 
@@ -39,7 +39,7 @@ namespace EventExpress.Pages
         public void ClickMyProfile() => btnMyProfile.Click();
 
         public string GetSignOutText() => btnLogOut.Text;
-        public string FindLoginErrorMessage() => FindElementByCSS<WebComponent>(_invalidLoginCSS).Text;
+        public string FindLoginErrorMessage() => FindElementByCSS<WebComponent>(invalidLoginCSS).Text;
         public string FindPassErrorMessage() => FindElementByCSS<WebComponent>(_invalidPasswordCSS).Text;
     }
 }
